@@ -6,5 +6,6 @@ il peut etre capricieux
 
 systeme d'exploitation disponible :
 
-  windows
-  linux
+  -windows
+  
+  -linux
