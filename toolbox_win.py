@@ -70,7 +70,7 @@ BANNER =("""
  """)
 
 aide = ("""
-  ____>>>toolox/aide<<<____________________________________________________
+  ____>>>toolbox/aide<<<____________________________________________________
  |           toute les commandes d'info du cmd fonctionnent !              |
  |                                                                         |
  | paramètre : affiche les paramètre                                       |
@@ -93,7 +93,7 @@ aide = ("""
  """)
 
 gen_parameters=("""
-  ____>>>toolox/paramètre<<<_______________________________________________
+  ____>>>toolbox/paramètre<<<_______________________________________________
  |                                                                         |
  | couleur : change la couleur de l'interface                              |
  | commande : accede au parametre des commandes                            |
@@ -103,7 +103,7 @@ gen_parameters=("""
  """)
 
 command_sys=("""
-  ____>>>toolox/paramètre/commande<<<______________________________________
+  ____>>>toolbox/paramètre/commande<<<______________________________________
  |                                                                         |
  | couleur : change la couleur des commandes                               |
  | linux : modifie le texte de commande pour celui de linux                |
