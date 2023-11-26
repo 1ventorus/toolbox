@@ -72,7 +72,6 @@ def install_toolbox():
         print("installation terminé !")
 
     elif optional_os =="aucun":
-        print(BANNER)
     
     else:
         print("Système non pris en charge. recommencez lorsque se systeme sera pris en charge\n")
@@ -90,14 +89,12 @@ if __name__ == "__main__":
         download = input(">>>")
         
         if download =="oui":
-            print(BANNER)
             install_toolbox()
             
         elif download =="non":
             break
 
         elif download =="help":
-            print(BANNER)
             print(Help)
 
         elif download =="supprimer":
@@ -110,4 +107,5 @@ if __name__ == "__main__":
         else:
             print(" je n'ai pas compris veuillez recommancer")
             time.sleep(2)
-            print(BANNER)
+
+
