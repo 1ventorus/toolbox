@@ -88,7 +88,7 @@ def install_toolbox():
     optional_os = input(">>>")
 
     if optional_os =="win":
-        fetch_file("https://raw.githubusercontent.com/1ventorus/toolbox/main/toobox.py", "toolbox_win.py")
+        fetch_file("https://raw.githubusercontent.com/1ventorus/toolbox/main/toolbox_win.py", "toolbox_win.py")
         loading()
         print("toolbox_win.py a été récupéré depuis GitHub.")
         print("installation terminé !")
