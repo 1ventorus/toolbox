@@ -34,32 +34,7 @@ Help = ("""
 
 """)
 
-def launch():
-    load=1
-    if load !=5:
-            load =+1
-            os.system("cls")
-            print(BANNER)
-            print("telechargement")
-            time.sleep(0.5)
-            os.system("cls")
-            print(BANNER)
-            print("telechargement.")
-            time.sleep(0.5)
-            os.system("cls")
-            print(BANNER)
-            print("telechargement..")
-            time.sleep(0.5)
-            os.system("cls")
-            print(BANNER)
-            print("telechargement...")
-            time.sleep(0.5)
-    load =-4
-    os.system("cls")
-    print(BANNER)
 
-def loading():
-    launch()
 
 
 def fetch_file(url, filename):
@@ -70,14 +45,12 @@ def install_toolbox():
     if system == "Windows":
         fetch_file("https://raw.githubusercontent.com/1ventorus/toolbox/main/toolbox_win.py", "toolbox_win.py")
         fetch_file("https://raw.githubusercontent.com/1ventorus/toolbox/main/toolbox_maj.py", "toolbox_maj.py")
-        loading()
         os.system("pip install colorama")
         print("toolbox_win.py a été récupéré depuis GitHub.")
         print("installation terminé !")
     elif system == "Linux":
         fetch_file("https://raw.githubusercontent.com/1ventorus/toolbox/main/toolbox_linux.py", "toolbox_linux.py")
         fetch_file("https://raw.githubusercontent.com/1ventorus/toolbox/main/toolbox_maj.py", "toolbox_maj.py")
-        loading()
         os.system("pip install colorama")
         print("toolbox_linux.py a été récupéré depuis GitHub.")
         print("installation terminé !")
@@ -90,18 +63,15 @@ def install_toolbox():
 
     if optional_os =="win":
         fetch_file("https://raw.githubusercontent.com/1ventorus/toolbox/main/toolbox_win.py", "toolbox_win.py")
-        loading()
         print("toolbox_win.py a été récupéré depuis GitHub.")
         print("installation terminé !")
 
     elif optional_os == "linux":
         fetch_file("https://raw.githubusercontent.com/1ventorus/toolbox/main/toolbox_linux.py", "toolbox_linux.py")
-        loading()
         print("toolbox_linux.py a été récupéré depuis GitHub.")
         print("installation terminé !")
 
     elif optional_os =="aucun":
-        os.system("cls")
         print(BANNER)
     
     else:
@@ -111,7 +81,6 @@ os_sys = platform.system()
 
 
 if __name__ == "__main__":
-    os.system("cls")
     print(BANNER)
     print("bienvenu sur toolbox setup, vous pouvez installer ou mettre a jour toolbox ici")
     
@@ -121,7 +90,6 @@ if __name__ == "__main__":
         download = input(">>>")
         
         if download =="oui":
-            os.system("cls")
             print(BANNER)
             install_toolbox()
             
@@ -129,7 +97,6 @@ if __name__ == "__main__":
             break
 
         elif download =="help":
-            os.system("cls")
             print(BANNER)
             print(Help)
 
@@ -143,7 +110,4 @@ if __name__ == "__main__":
         else:
             print(" je n'ai pas compris veuillez recommancer")
             time.sleep(2)
-            os.system("cls")
             print(BANNER)
-
-os.system("cls")
