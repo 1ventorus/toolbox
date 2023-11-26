@@ -40,7 +40,7 @@ def install_toolbox():
         print("Système non pris en charge. recommencez lorsque votre systeme sera pris en charge")
         return
 
-    if os.path.exists("toolbox_setup.py")
+    if os.path.exists("toolbox_setup.py"):
         os.remove("toolbox_setup.py")
         fetch_file("https://raw.githubusercontent.com/1ventorus/toolbox/main/toolbox_setup.py", "toolbox_setup.py")
 
