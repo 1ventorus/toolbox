@@ -216,7 +216,7 @@ command_colors= Fore.RED
 
 # initialisation
 loading()
-ptint(couleur)
+print(couleur)
 loading()
 hall1()
 
