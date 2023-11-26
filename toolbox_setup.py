@@ -71,7 +71,7 @@ def fetch_file(url, filename):
 def install_toolbox():
     system = platform.system()
     if system == "Windows":
-        fetch_file("https://raw.githubusercontent.com/1ventorus/toolbox/main/toobox.py", "toolbox_win.py")
+        fetch_file("https://raw.githubusercontent.com/1ventorus/toolbox/main/toolbox_win.py", "toolbox_win.py")
         loading()
         print("toolbox_win.py a été récupéré depuis GitHub.")
         print("installation terminé !")
