@@ -98,9 +98,13 @@ def install_toolbox():
         loading()
         print("toolbox_linux.py a été récupéré depuis GitHub.")
         print("installation terminé !")
+
+    elif optional_os =="aucun":
+        os.system("cls")
+        print(BANNER)
     
     else:
-        print("Système non pris en charge. recommencez lorsque se systeme sera pris en charge")
+        print("Système non pris en charge. recommencez lorsque se systeme sera pris en charge\n")
 
 os_sys = platform.system()
 
@@ -111,8 +115,8 @@ if __name__ == "__main__":
     print("bienvenu sur toolbox setup, vous pouvez installer ou mettre a jour toolbox ici")
     
     while True:
-        print("lancer le telechargement de toolbox version ", os_sys, "\n oui/non")
-        print("help si vous êtes perdu")
+        print("lancer le telechargement de toolbox version ", os_sys, "\n\noui/non")
+        print("help si vous êtes perdu\n")
         download = input(">>>")
         
         if download =="oui":
