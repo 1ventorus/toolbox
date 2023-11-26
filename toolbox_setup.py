@@ -60,9 +60,6 @@ def launch():
 
 def loading():
     launch()
-    launch()
-    launch()
-    launch()
 
 
 def fetch_file(url, filename):
@@ -72,12 +69,16 @@ def install_toolbox():
     system = platform.system()
     if system == "Windows":
         fetch_file("https://raw.githubusercontent.com/1ventorus/toolbox/main/toolbox_win.py", "toolbox_win.py")
+        fetch_file("https://raw.githubusercontent.com/1ventorus/toolbox/main/toolbox_maj.py", "toolbox_maj.py")
         loading()
+        os.system("pip install colorama")
         print("toolbox_win.py a été récupéré depuis GitHub.")
         print("installation terminé !")
     elif system == "Linux":
         fetch_file("https://raw.githubusercontent.com/1ventorus/toolbox/main/toolbox_linux.py", "toolbox_linux.py")
+        fetch_file("https://raw.githubusercontent.com/1ventorus/toolbox/main/toolbox_maj.py", "toolbox_maj.py")
         loading()
+        os.system("pip install colorama")
         print("toolbox_linux.py a été récupéré depuis GitHub.")
         print("installation terminé !")
     else:
@@ -115,7 +116,7 @@ if __name__ == "__main__":
     print("bienvenu sur toolbox setup, vous pouvez installer ou mettre a jour toolbox ici")
     
     while True:
-        print("lancer le telechargement de toolbox version ", os_sys, "\n\noui/non")
+        print("lancer le telechargement de toolbox version ", os_sys, "\n\noui/non/supprimer")
         print("help si vous êtes perdu\n")
         download = input(">>>")
         
@@ -131,6 +132,13 @@ if __name__ == "__main__":
             os.system("cls")
             print(BANNER)
             print(Help)
+
+        elif download =="supprimer":
+            if os.path.exists("toolbox_win.py"):
+                os.remove("toolbox_win.py")
+
+            if os.path.exists("toolbox_linux.py"):
+                os.remove("toolbox_linux.py")
 
         else:
             print(" je n'ai pas compris veuillez recommancer")
