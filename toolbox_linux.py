@@ -93,7 +93,7 @@ aide = ("""
  """)
 
 gen_parameters=("""
-  ____>>>toolox/parametre<<<_______________________________________________
+  ____>>>toolbox/parametre<<<_______________________________________________
  |                                                                         |
  | couleur : change la couleur de l'interface                              |
  | commande : accede au parametre des commandes                            |
@@ -103,7 +103,7 @@ gen_parameters=("""
  """)
 
 command_sys=("""
-  ____>>>toolox/parametre/commande<<<______________________________________
+  ____>>>toolbox/parametre/commande<<<______________________________________
  |                                                                         |
  | couleur : change la couleur des commandes                               |
  | linux : modifie le texte de commande pour celui de linux                |
