@@ -11,3 +11,6 @@ il peut etre capricieux
   -windows
   
   -linux
+
+
+vous devez avoir python sur votre pc
