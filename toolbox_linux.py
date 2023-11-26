@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 # import
+from colorama import*
 import os
 import time
 import sys
@@ -11,39 +12,6 @@ import threading
 import uuid
 import platform
 
-# initialisation du code
-def launch():
-    load=1
-    if load !=5:
-            load =+1
-            os.system("clear")
-            print("chargement")
-            time.sleep(0.5)
-            os.system("clear")
-            print("chargement.")
-            time.sleep(0.5)
-            os.system("clear")
-            print("chargement..")
-            time.sleep(0.5)
-            os.system("clear")
-            print("chargement...")
-            time.sleep(0.5)
-    load =-4
-
-def loading():
-    launch()
-    launch()
-
-loading()
-os.system("pip install colorama")
-
-from colorama import*
-
-# mise en place des couleur
-couleur = Fore.MAGENTA
-command_colors= Fore.RED
-
-print(couleur)
 
 # affichage
 BANNER =("""
@@ -93,7 +61,7 @@ aide = ("""
  """)
 
 gen_parameters=("""
-  ____>>>toolbox/parametre<<<_______________________________________________
+  ____>>>toolox/parametre<<<_______________________________________________
  |                                                                         |
  | couleur : change la couleur de l'interface                              |
  | commande : accede au parametre des commandes                            |
@@ -103,7 +71,7 @@ gen_parameters=("""
  """)
 
 command_sys=("""
-  ____>>>toolbox/parametre/commande<<<______________________________________
+  ____>>>toolox/parametre/commande<<<______________________________________
  |                                                                         |
  | couleur : change la couleur des commandes                               |
  | linux : modifie le texte de commande pour celui de linux                |
@@ -122,16 +90,15 @@ cred=("""
  """)
 
 new=("""
+
  version actuel de toolbox :
-    beta 0.10.8
+    beta 0.10.9
  
  dernier ajout :
-    -couleur suplementaire et info sur les couleur possible
-    -ajout de info systeme
-    -modifcation du systeme des couleur
-    -ajout d'info utile dans le code source
+    -amelioration des couleurs
+    -correctif de bug
+    -systeme de mide a jour
  """)
-
 # fonction complex
 def TEXT_DELAY(TEXT, DELAY):
     for CHAR in TEXT:
@@ -182,6 +149,28 @@ def get_mac_address():
     mac = ':'.join(['{:02x}'.format((uuid.getnode() >> ele) & 0xff) for ele in range(0, 8 * 6, 8)][::-1])
     return mac
 
+def launch():
+    load=1
+    if load !=5:
+            load =+1
+            os.system("clear")
+            print("chargement")
+            time.sleep(0.5)
+            os.system("clear")
+            print("chargement.")
+            time.sleep(0.5)
+            os.system("clear")
+            print("chargement..")
+            time.sleep(0.5)
+            os.system("clear")
+            print("chargement...")
+            time.sleep(0.5)
+    load =-4
+
+def loading():
+    launch()
+    launch()
+
 def close():
     load3=1
     if load3 !=5:
@@ -215,11 +204,17 @@ mac_adress =get_mac_address()
 # systeme de commande
 entry =">>> "
 linux_command=("""
- ┌─[toolbox 0.10.8]─[administrator tool]─[~]
+ ┌─[toolbox 0.10.9]─[administrator tool]─[~]
  └──╼[★]$>>> """)
 win_command=os.getcwd() + ">>>"       # os.getcwd() permet d'obtenir la position sous format str 
 
-# finalisation de linitialisation
+# mise en place des couleur
+couleur = Fore.MAGENTA
+command_colors= Fore.RED
+
+# initialisation
+loading()
+print(couleur)
 loading()
 hall1()
 
@@ -241,44 +236,35 @@ while True:
                 color = input(command_colors + entry)
 
                 if color == "jaune": 
-                    Command_Parameters()
+                    General_Parameters()
                     couleur = Fore.YELLOW
                     
                 elif color == "vert":
                     couleur = Fore.GREEN
-                    Command_Parameters()
 
                 elif color == "blanc":
                     couleur = Fore.WHITE
-                    Command_Parameters()
 
                 elif color == "bleu":
                     couleur = Fore.BLUE
-                    Command_Parameters()
-
                 elif color == "majenta":
                     couleur = Fore.MAGENTA
-                    Command_Parameters()
 
                 elif color == "rouge":
                     couleur = Fore.RED
-                    Command_Parameters()
 
                 elif color == "cyan":
                     couleur = Fore.CYAN
-                    Command_Parameters()
 
                 elif color == "violet":
                     couleur = Fore.MAGENTA + Style.DIM
-                    Command_Parameters()
 
                 elif color == "rose":
                     couleur = Fore.MAGENTA + Style.BRIGHT
-                    command_parameters()
 
                 else:
-                    Command_Parameters()
                     print("Cette couleur ne fonctionne pas")
+                General_Parameters()
 
   # parametre de l'entré des commande
             elif control=="commande":
@@ -352,8 +338,7 @@ while True:
             elif control=="maj":
                 os.system("pip download colorama")
                 print("maj fini, colorama est a jour !")
-                time.sleep(4)
-                General_Parameters()
+                os.system("python toolbox_maj.py")
 
   # info systeme
             elif control=="info systeme":
