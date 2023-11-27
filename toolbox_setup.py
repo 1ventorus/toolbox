@@ -72,9 +72,6 @@ def install_toolbox():
         print("installation terminé !")
 
     elif optional_os =="aucun":
-    
-    else:
-        print("Système non pris en charge. recommencez lorsque se systeme sera pris en charge\n")
 
 os_sys = platform.system()
 
