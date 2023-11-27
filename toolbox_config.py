@@ -6,8 +6,8 @@ import os
 import json
 
 config = {
-    "couleur":Fore.MAGENTA
-    "command_colors":Fore.RED
+    "couleur": Fore.MAGENTA,
+    "command_colors": Fore.RED,
     "entry":">>>"
 }
 
