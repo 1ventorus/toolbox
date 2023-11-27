@@ -106,6 +106,9 @@ if __name__ == "__main__":
             if os.path.exists("toolbox_linux.py"):
                 os.remove("toolbox_linux.py")
 
+            if os.path.exists("toolbox_maj.py"):
+                os.remove("toolbox_maj.py")
+
         else:
             print(" je n'ai pas compris veuillez recommancer")
             time.sleep(2)
