@@ -66,6 +66,7 @@ gen_parameters=("""
  | couleur : change la couleur de l'interface                              |
  | commande : accede au parametre des commandes                            |
  | info systeme : donne les totute les info de toolbox                     |
+ | maj : met a jour vos toolbox                                            |
  | close : retourne dans toolbox                                           |
  |_________________________________________________________________________|
  """)
@@ -96,9 +97,11 @@ new=("""
  
  dernier ajout :
     -amelioration des couleurs
-    -correctif de bug
+    -correction de bug
     -systeme de mide a jour
+    -correction de bug sur setup et maj
  """)
+
 # fonction complex
 def TEXT_DELAY(TEXT, DELAY):
     for CHAR in TEXT:
@@ -339,6 +342,7 @@ while True:
                 os.system("pip download colorama")
                 print("maj fini, colorama est a jour !")
                 os.system("python toolbox_maj.py")
+                print("vous pouvez relancer le programme")
 
   # info systeme
             elif control=="info systeme":
