@@ -79,7 +79,7 @@ os_sys = platform.system()
 
 if __name__ == "__main__":
     print(BANNER)
-    print("bienvenu sur toolbox setup, vous pouvez installer ou mettre a jour toolbox ici")
+    print("bienvenue sur toolbox setup, vous pouvez installer ou mettre à jour toolbox ici")
     
     while True:
         print("lancer le telechargement de toolbox version ", os_sys, "\n\noui/non/supprimer")
