@@ -72,6 +72,7 @@ def install_toolbox():
         print("installation terminé !")
 
     elif optional_os =="aucun":
+        pass
 
 os_sys = platform.system()
 
