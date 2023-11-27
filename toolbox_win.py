@@ -338,7 +338,7 @@ while True:
 
   # maj
             elif control=="maj":
-                os.system("pip download colorama")
+                os.system("pip install colorama")
                 print("maj fini, colorama est a jour !")
                 os.system("python toolbox_maj.py")
                 print("vous pouvez relancer le programme")
