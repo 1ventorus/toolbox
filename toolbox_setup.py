@@ -87,7 +87,11 @@ if __name__ == "__main__":
         download = input(">>>")
         
         if download =="oui":
-            install_toolbox()
+            try:
+                install_toolbox()
+
+            except OSError:
+                print("pas de connection internet, veuillez vous connecter")
             
         elif download =="non":
             break
