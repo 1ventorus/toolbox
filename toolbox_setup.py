@@ -110,7 +110,7 @@ if __name__ == "__main__":
                 os.remove("toolbox_maj.py")
 
         else:
-            print(" je n'ai pas compris veuillez recommancer")
+            print(" je n'ai pas compris veuillez recommencer")
             time.sleep(2)
 
 
