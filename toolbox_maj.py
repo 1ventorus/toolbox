@@ -42,4 +42,7 @@ def install_toolbox():
     fetch_file("https://raw.githubusercontent.com/1ventorus/toolbox/main/toolbox_setup.py", "toolbox_setup.py")
 
 if __name__ =="__main__":
-    install_toolbox()
+    try:
+        install_toolbox()
+    except OSError:
+        print("impossible de se connecter pour faire la mise a jour")
