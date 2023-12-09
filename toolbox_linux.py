@@ -27,7 +27,7 @@ BANNER =("""
   _________________________________________________________________
  |       toute les commandes d'info du cmd fonctionnent !          |
  |                                                                 |
- | paramètre : affiche les paramètre                               |
+ | parametre : affiche les paramètres                              |
  | IPinfo : donne toute les info ip de la machine                  |
  | MACinfo : donne toute les info MAC de la machine                |
  | aide : affiche plus de commande                                 |
@@ -38,12 +38,11 @@ BANNER =("""
  """)
 
 aide = ("""
-   __toolbox__
-  _________________________________________________________________________
+  ____>>>toolbox/aide<<<___________________________________________________
  |              toute les commande d'info du cmd fonctionne !              |
  |                                                                         |
  | chat : permet de discuter avec soi même                                 |
- | couleur : change la couleur de l'interface          ,                   |
+ | couleur : change la couleur de l'interface                              |
  | IPinfo : donne toute les info ip de la machine                          |
  | MACinfo : donne toute les info MAC de la machine                        |
  | os : donne le systeme d'exploitation (os) de la machine                 |
@@ -61,18 +60,18 @@ aide = ("""
  """)
 
 gen_parameters=("""
-  ____>>>toolox/parametre<<<_______________________________________________
+  ____>>>toolbox/paramètres<<<_____________________________________________
  |                                                                         |
  | couleur : change la couleur de l'interface                              |
- | commande : accede au parametre des commandes                            |
- | info systeme : donne les totute les info de toolbox                     |
+ | commande : accede au paramètres des commandes                           |
+ | info systeme : donne les toute les info de toolbox                      |
  | maj : met a jour vos toolbox                                            |
  | close : retourne dans toolbox                                           |
  |_________________________________________________________________________|
  """)
 
 command_sys=("""
-  ____>>>toolox/parametre/commande<<<______________________________________
+  ____>>>toolbox/paramètres/commande<<<____________________________________
  |                                                                         |
  | couleur : change la couleur des commandes                               |
  | linux : modifie le texte de commande pour celui de linux                |
@@ -91,16 +90,27 @@ cred=("""
  """)
 
 new=("""
-
  version actuel de toolbox :
-    beta 0.10.9
+    beta 0.11.0
  
  dernier ajout :
-    -amelioration des couleurs
-    -correction de bug
-    -systeme de mide a jour
-    -correction de bug sur setup et maj
+    -correction de l'orthographe
+    -ajout du système de sauvegarde des paramètres
+    -ajout de sauvegarde manuel
+    -ajout de chargement des paramètre manuel
  """)
+
+# systeme de commande
+entry_com="defaut"
+linux_command=("""
+ ┌─[toolbox 0.11.0]─[administrator tool]─[~]
+ └──╼[★]$>>> """)
+win_command=os.getcwd() + ">>>"       # os.getcwd() permet d'obtenir la position sous format str 
+
+# variable d'environnement
+couleur_save = "magenta"
+command_colors_save = "rouge"
+entry_save = ">>>"
 
 # fonction complex
 def TEXT_DELAY(TEXT, DELAY):
@@ -108,6 +118,76 @@ def TEXT_DELAY(TEXT, DELAY):
         print(CHAR, end='', flush=True)
         time.sleep(DELAY)
     print()
+
+def save_config():
+    with open("save_config.txt", "w+") as fichier:
+        if entry_com == "win":
+            entry_save = "win"
+
+        elif entry_com == "lin":
+            entry_save = "lin"
+
+        elif entry_com == "defaut":
+            entry_save = ">>>"
+
+
+        if couleur == Fore.YELLOW:
+            couleur_save = "jaune"
+            
+        elif couleur == Fore.GREEN:
+            couleur_save = "vert"
+
+        elif couleur == Fore.WHITE:
+            couleur_save = "blanc"
+
+        elif couleur == Fore.BLUE:
+            couleur_save = "bleu"
+
+        elif couleur == Fore.MAGENTA:
+            couleur_save = "magenta"
+
+        elif couleur == Fore.RED:
+            couleur_save = "rouge"
+
+        elif couleur == Fore.CYAN:
+            couleur_save = "cyan"
+
+        elif couleur == Fore.MAGENTA + Style.DIM:
+            couleur_save = "violet"
+
+        elif couleur == Fore.MAGENTA + Style.BRIGHT:
+            couleur_save = "rose"
+
+        
+        if command_colors == Fore.YELLOW:
+            command_colors_save = "jaune"
+            
+        elif command_colors == Fore.GREEN:
+            command_colors_save = "vert"
+
+        elif command_colors == Fore.WHITE:
+            command_colors_save = "blanc"
+
+        elif command_colors == Fore.BLUE:
+            command_colors_save = "bleu"
+
+        elif command_colors == Fore.MAGENTA:
+            command_colors_save = "magenta"
+
+        elif command_colors == Fore.RED:
+            command_colors_save = "rouge"
+
+        elif command_colors == Fore.CYAN:
+            command_colors_save = "cyan"
+
+        elif command_colors == Fore.MAGENTA + Style.DIM:
+            command_colors_save = "violet"
+
+        elif command_colors == Fore.MAGENTA + Style.BRIGHT:
+            command_colors_save = "rose"
+
+        fichier.write(entry_save+"\n"+couleur_save+"\n"+command_colors_save)
+        fichier.close()
 
 def hall1():
     os.system("clear")
@@ -204,18 +284,79 @@ ipv4 =get_ipv4_address()
 ipv6 =get_ipv6_address()
 mac_adress =get_mac_address()
 
-# systeme de commande
-entry =">>> "
-linux_command=("""
- ┌─[toolbox 0.10.9]─[administrator tool]─[~]
- └──╼[★]$>>> """)
-win_command=os.getcwd() + ">>>"       # os.getcwd() permet d'obtenir la position sous format str 
-
-# mise en place des couleur
-couleur = Fore.MAGENTA
-command_colors= Fore.RED
-
 # initialisation
+with open("save_config.txt", "r") as file:
+    info = file.read()
+    savelist = info.splitlines()
+    entry_save = savelist[0]
+    couleur_save = savelist[1]
+    command_colors_save = savelist[2]
+
+if entry_save == ">>>":
+    entry = ">>>"
+
+elif entry_save == "lin":
+    entry = linux_command
+
+elif entry_save == "win":
+    entry = win_command
+
+            
+if couleur_save == "jaune":
+    couleur = Fore.YELLOW
+                
+elif couleur_save == "vert":
+    couleur = Fore.GREEN
+
+elif couleur_save == "blanc":
+    ouleur = Fore.WHITE
+
+elif couleur_save == "bleu":
+    couleur = Fore.BLUE
+
+elif couleur_save == "majenta":
+    couleur = Fore.MAGENTA
+
+elif couleur_save == "rouge":
+    couleur = Fore.RED
+
+elif couleur_save == "cyan":
+    couleur = Fore.CYAN
+
+elif couleur_save == "violet":
+    couleur = Fore.MAGENTA + Style.DIM
+
+elif couleur_save == "rose":
+    couleur = Fore.MAGENTA + Style.BRIGHT
+
+            
+if command_colors_save == "jaune":
+    command_colors = Fore.YELLOW
+                
+elif command_colors_save == "vert":
+    command_colors = Fore.GREEN
+
+elif command_colors_save == "blanc":
+    command_colors = Fore.WHITE
+
+elif command_colors_save == "bleu":
+    command_colors = Fore.BLUE
+
+elif command_colors_save == "majenta":
+    command_colors = Fore.MAGENTA
+
+elif command_colors_save == "rouge":
+    command_colors = Fore.RED
+
+elif command_colors_save == "cyan":
+    command_colors = Fore.CYAN
+
+elif command_colors_save == "violet":
+    command_colors = Fore.MAGENTA + Style.DIM
+
+elif command_colors_save == "rose":
+    command_colors = Fore.MAGENTA + Style.BRIGHT
+
 loading()
 print(couleur)
 loading()
@@ -235,11 +376,10 @@ while True:
   # couleur general
             if control == "couleur":
                 General_Parameters()
-                print(couleur +"quelle couleur : vert/jaune/rouge/majenta/cyan/blanc/bleu/violet/rose")
+                print(couleur +"quelle couleur ? vert/jaune/rouge/majenta/cyan/blanc/bleu/violet/rose")
                 color = input(command_colors + entry)
 
-                if color == "jaune": 
-                    General_Parameters()
+                if color == "jaune":
                     couleur = Fore.YELLOW
                     
                 elif color == "vert":
@@ -250,6 +390,7 @@ while True:
 
                 elif color == "bleu":
                     couleur = Fore.BLUE
+
                 elif color == "majenta":
                     couleur = Fore.MAGENTA
 
@@ -267,6 +408,7 @@ while True:
 
                 else:
                     print("Cette couleur ne fonctionne pas")
+                save_config()
                 General_Parameters()
 
   # parametre de l'entré des commande
@@ -306,36 +448,35 @@ while True:
 
                         elif color == "rose":
                             command_colors = Fore.MAGENTA + Style.BRIGHT
-                            
+                        
                         else:
                             print("Cette couleur ne fonctionne pas")
-                        
-                        Command_Parameters()
+                        save_config()
 
     # style visuel commande
                     elif command_system=="linux":
-                        entry=linux_command
-                        Command_Parameters()
+                        entry= linux_command
+                        entry_com = "lin"
                         break
 
                     elif command_system=="win":
-                        entry=win_command
-                        Command_Parameters()
+                        entry= win_command
+                        entry_com = "win"
                         break
 
                     elif command_system=="defaut":
-                        entry=">>> "
-                        Command_Parameters()
+                        entry= ">>> "
+                        entry_com = "defaut"
                         break
 
                     elif command_system=="back":
-                        Command_Parameters()
+                        General_Parameters()
                         break
 
                     else:
                         print("veuillez recommencer")
                         time.sleep(2)
-                        Command_Parameters()
+                    save_config()
 
   # maj
             elif control=="maj":
@@ -377,7 +518,7 @@ while True:
         
         if system_name == "posix":
             print("système d'exploitation Unix")
-            pint("cette os correspond a toute les version de linux et macOS")
+            print("cette os correspond a toute les version de linux et macOS")
             unix_version = platform.uname()
             print("Informations sur la version d'Unix :", unix_version)
         
@@ -421,6 +562,87 @@ while True:
             hall()
             print(couleur + cred)
             print("")
+
+ # save des réglages
+    elif command =="save":
+        save_config()
+        hall()
+        print("paramètre sauvegardé")
+
+    elif command =="load":
+        with open("save_config.txt", "r") as file:
+            info = file.read()
+            savelist = info.splitlines()
+            entry_save = savelist[0]
+            couleur_save = savelist[1]
+            command_colors_save = savelist[2]
+
+            if entry_save == ">>>":
+                entry = ">>>"
+
+            elif entry_save == "lin":
+                entry = linux_command
+
+            elif entry_save == "win":
+                entry = win_command
+
+                        
+            if couleur_save == "jaune":
+                couleur = Fore.YELLOW
+                            
+            elif couleur_save == "vert":
+                couleur = Fore.GREEN
+
+            elif couleur_save == "blanc":
+                ouleur = Fore.WHITE
+
+            elif couleur_save == "bleu":
+                couleur = Fore.BLUE
+
+            elif couleur_save == "majenta":
+                couleur = Fore.MAGENTA
+
+            elif couleur_save == "rouge":
+                couleur = Fore.RED
+
+            elif couleur_save == "cyan":
+                couleur = Fore.CYAN
+
+            elif couleur_save == "violet":
+                couleur = Fore.MAGENTA + Style.DIM
+
+            elif couleur_save == "rose":
+                couleur = Fore.MAGENTA + Style.BRIGHT
+
+                        
+            if command_colors_save == "jaune":
+                command_colors = Fore.YELLOW
+                            
+            elif command_colors_save == "vert":
+                command_colors = Fore.GREEN
+
+            elif command_colors_save == "blanc":
+                command_colors = Fore.WHITE
+
+            elif command_colors_save == "bleu":
+                command_colors = Fore.BLUE
+
+            elif command_colors_save == "majenta":
+                command_colors = Fore.MAGENTA
+
+            elif command_colors_save == "rouge":
+                command_colors = Fore.RED
+
+            elif command_colors_save == "cyan":
+                command_colors = Fore.CYAN
+
+            elif command_colors_save == "violet":
+                command_colors = Fore.MAGENTA + Style.DIM
+
+            elif command_colors_save == "rose":
+                command_colors = Fore.MAGENTA + Style.BRIGHT
+        hall()
+        print("paramètre chargé")
 
  # extinction systeme
     elif command =="close":
