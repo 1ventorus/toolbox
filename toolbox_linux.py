@@ -31,7 +31,9 @@ BANNER =("""
  | IPinfo : donne toute les info ip de la machine                  |
  | MACinfo : donne toute les info MAC de la machine                |
  | aide : affiche plus de commande                                 |
- | clear : même fonction que 'cls' mais garde l'interface          |
+ | cls : même fonction que 'clear' mais garde l'interface          |
+ | save : sauvegarde les paramètres actuel                         |
+ | load : charge les dernier paramètre sauvegardé                  |
  | close : ferme le cmd personnalisé                               |
  |_________________________________________________________________|
 
@@ -53,6 +55,8 @@ aide = ("""
  | help : affiche l'aide du cmd                                            |
  | dir : affiche la liste des fichier du répertoire                        |
  | cls : même fonction que 'clear' mais garde l'interface                  |
+ | save : sauvegarde les paramètres actuel                                 |
+ | load : charge les dernier paramètre sauvegardé                          |
  | close : ferme le invite de commande personnalisé                        |
  | credits : affiche les crdits ainsi que la version du systeme            |
  |_________________________________________________________________________| 
