@@ -292,70 +292,70 @@ with open("save_config.txt", "r") as file:
     couleur_save = savelist[1]
     command_colors_save = savelist[2]
 
-if entry_save == ">>>":
-    entry = ">>>"
-
-elif entry_save == "lin":
-    entry = linux_command
-
-elif entry_save == "win":
-    entry = win_command
-
-            
-if couleur_save == "jaune":
-    couleur = Fore.YELLOW
-                
-elif couleur_save == "vert":
-    couleur = Fore.GREEN
-
-elif couleur_save == "blanc":
-    ouleur = Fore.WHITE
-
-elif couleur_save == "bleu":
-    couleur = Fore.BLUE
-
-elif couleur_save == "majenta":
-    couleur = Fore.MAGENTA
-
-elif couleur_save == "rouge":
-    couleur = Fore.RED
-
-elif couleur_save == "cyan":
-    couleur = Fore.CYAN
-
-elif couleur_save == "violet":
-    couleur = Fore.MAGENTA + Style.DIM
-
-elif couleur_save == "rose":
-    couleur = Fore.MAGENTA + Style.BRIGHT
-
-            
-if command_colors_save == "jaune":
-    command_colors = Fore.YELLOW
-                
-elif command_colors_save == "vert":
-    command_colors = Fore.GREEN
-
-elif command_colors_save == "blanc":
-    command_colors = Fore.WHITE
-
-elif command_colors_save == "bleu":
-    command_colors = Fore.BLUE
-
-elif command_colors_save == "majenta":
-    command_colors = Fore.MAGENTA
-
-elif command_colors_save == "rouge":
-    command_colors = Fore.RED
-
-elif command_colors_save == "cyan":
-    command_colors = Fore.CYAN
-
-elif command_colors_save == "violet":
-    command_colors = Fore.MAGENTA + Style.DIM
-
-elif command_colors_save == "rose":
-    command_colors = Fore.MAGENTA + Style.BRIGHT
+     if entry_save == ">>>":
+         entry = ">>>"
+     
+     elif entry_save == "lin":
+         entry = linux_command
+     
+     elif entry_save == "win":
+         entry = win_command
+     
+                 
+     if couleur_save == "jaune":
+         couleur = Fore.YELLOW
+                     
+     elif couleur_save == "vert":
+         couleur = Fore.GREEN
+     
+     elif couleur_save == "blanc":
+         ouleur = Fore.WHITE
+     
+     elif couleur_save == "bleu":
+         couleur = Fore.BLUE
+     
+     elif couleur_save == "majenta":
+         couleur = Fore.MAGENTA
+     
+     elif couleur_save == "rouge":
+         couleur = Fore.RED
+     
+     elif couleur_save == "cyan":
+         couleur = Fore.CYAN
+     
+     elif couleur_save == "violet":
+         couleur = Fore.MAGENTA + Style.DIM
+     
+     elif couleur_save == "rose":
+         couleur = Fore.MAGENTA + Style.BRIGHT
+     
+                 
+     if command_colors_save == "jaune":
+         command_colors = Fore.YELLOW
+                     
+     elif command_colors_save == "vert":
+         command_colors = Fore.GREEN
+     
+     elif command_colors_save == "blanc":
+         command_colors = Fore.WHITE
+     
+     elif command_colors_save == "bleu":
+         command_colors = Fore.BLUE
+     
+     elif command_colors_save == "majenta":
+         command_colors = Fore.MAGENTA
+     
+     elif command_colors_save == "rouge":
+         command_colors = Fore.RED
+     
+     elif command_colors_save == "cyan":
+         command_colors = Fore.CYAN
+     
+     elif command_colors_save == "violet":
+         command_colors = Fore.MAGENTA + Style.DIM
+     
+     elif command_colors_save == "rose":
+         command_colors = Fore.MAGENTA + Style.BRIGHT
 
 loading()
 print(couleur)
