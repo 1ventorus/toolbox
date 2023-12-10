@@ -62,7 +62,7 @@ def install_toolbox():
 
 def install_requierment():
     fetch_file("https://raw.githubusercontent.com/1ventorus/toolbox/main/toolbox_maj.py", "toolbox_maj.py")
-    fetch_file("https://raw.githubusercontent.com/1ventorus/toolbox/main/toolbox_config.py", "toolbox_config.py")
+               
     fetch_file("https://raw.githubusercontent.com/1ventorus/toolbox/main/save_config.txt", "save_config.txt")
     os.system("pip install colorama")
     
