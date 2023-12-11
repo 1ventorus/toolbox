@@ -300,69 +300,69 @@ with open("save_config.txt", "r") as file:
     couleur_save = savelist[1]
     command_colors_save = savelist[2]
 
-     if entry_save == ">>>":
+    if entry_save == ">>>":
          entry = ">>>"
      
-     elif entry_save == "lin":
+    elif entry_save == "lin":
          entry = linux_command
      
-     elif entry_save == "win":
+    elif entry_save == "win":
          entry = win_command
      
                  
-     if couleur_save == "jaune":
+    if couleur_save == "jaune":
          couleur = Fore.YELLOW
                      
-     elif couleur_save == "vert":
+    elif couleur_save == "vert":
          couleur = Fore.GREEN
      
-     elif couleur_save == "blanc":
+    elif couleur_save == "blanc":
          ouleur = Fore.WHITE
      
-     elif couleur_save == "bleu":
+    elif couleur_save == "bleu":
          couleur = Fore.BLUE
      
-     elif couleur_save == "majenta":
+    elif couleur_save == "majenta":
          couleur = Fore.MAGENTA
      
-     elif couleur_save == "rouge":
+    elif couleur_save == "rouge":
          couleur = Fore.RED
      
-     elif couleur_save == "cyan":
+    elif couleur_save == "cyan":
          couleur = Fore.CYAN
      
-     elif couleur_save == "violet":
+    elif couleur_save == "violet":
          couleur = Fore.MAGENTA + Style.DIM
      
-     elif couleur_save == "rose":
+    elif couleur_save == "rose":
          couleur = Fore.MAGENTA + Style.BRIGHT
      
                  
-     if command_colors_save == "jaune":
+    if command_colors_save == "jaune":
          command_colors = Fore.YELLOW
                      
-     elif command_colors_save == "vert":
+    elif command_colors_save == "vert":
          command_colors = Fore.GREEN
      
-     elif command_colors_save == "blanc":
+    elif command_colors_save == "blanc":
          command_colors = Fore.WHITE
      
-     elif command_colors_save == "bleu":
+    elif command_colors_save == "bleu":
          command_colors = Fore.BLUE
      
-     elif command_colors_save == "majenta":
+    elif command_colors_save == "majenta":
          command_colors = Fore.MAGENTA
      
-     elif command_colors_save == "rouge":
+    elif command_colors_save == "rouge":
          command_colors = Fore.RED
      
-     elif command_colors_save == "cyan":
+    elif command_colors_save == "cyan":
          command_colors = Fore.CYAN
      
-     elif command_colors_save == "violet":
+    elif command_colors_save == "violet":
          command_colors = Fore.MAGENTA + Style.DIM
      
-     elif command_colors_save == "rose":
+    elif command_colors_save == "rose":
          command_colors = Fore.MAGENTA + Style.BRIGHT
 
 loading()
